@@ -4,7 +4,7 @@
 	font-weight: 100;
 	src: local('Roboto Thin'),
 	local('Roboto-Thin'),
-	url(./roboto/Roboto-Thin.ttf) format('truetype');
+	url(roboto/Roboto-Thin.ttf) format('truetype');
 }
 
 @font-face {
@@ -13,7 +13,7 @@
 	font-weight: 300;
 	src: local('Roboto Light'),
 	local('Roboto-Light'),
-	url(./roboto/Roboto-Light.ttf) format('truetype');
+	url(roboto/Roboto-Light.ttf) format('truetype');
 }
 
 @font-face {
@@ -22,7 +22,7 @@
 	font-weight: 400;
 	src: local('Roboto'),
 	local('Roboto-Regular'),
-	url(./roboto/Roboto-Regular.ttf) format('truetype');
+	url(roboto/Roboto-Regular.ttf) format('truetype');
 }
 
 @font-face {
@@ -31,7 +31,7 @@
 	font-weight: 500;
 	src: local('Roboto Medium'),
 	local('Roboto-Medium'),
-	url(./roboto/Roboto-Medium.ttf) format('truetype');
+	url(roboto/Roboto-Medium.ttf) format('truetype');
 }
 
 @font-face {
@@ -40,7 +40,7 @@
 	font-weight: 700;
 	src: local('Roboto Bold'),
 	local('Roboto-Bold'),
-	url(./roboto/Roboto-Bold.ttf) format('truetype');
+	url(roboto/Roboto-Bold.ttf) format('truetype');
 }
 
 @font-face {
@@ -49,5 +49,5 @@
 	font-weight: 900;
 	src: local('Roboto Black'),
 	local('Roboto-Black'),
-	url(./roboto/Roboto-Black.ttf) format('truetype');
+	url(roboto/Roboto-Black.ttf) format('truetype');
 }

@@ -13,6 +13,9 @@
 <script>
 	import { mapGetters } from 'vuex';
 
+	import '@/assets/roboto.css';
+	import '@/assets/material-icons.css';
+
 	import Sidebar from '@/components/Sidebar';
 	import Toolbar from '@/components/Toolbar';
 	import Footer  from '@/components/Footer';

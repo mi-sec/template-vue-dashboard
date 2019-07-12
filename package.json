@@ -1,7 +1,9 @@
 {
 	"name": "template-vue-dashboard",
 	"version": "1.0.0",
+	"description": "Basic vue dashboard",
 	"private": true,
+	"main": "main.js",
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
@@ -53,5 +55,20 @@
 	"browserslist": [
 		"> 1%",
 		"last 2 versions"
-	]
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mi-sec/template-vue-dashboard.git"
+	},
+	"keywords": [
+		"vue",
+		"dashboard",
+		"template"
+	],
+	"author": "MI-SEC",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mi-sec/template-vue-dashboard/issues"
+	},
+	"homepage": "https://github.com/mi-sec/template-vue-dashboard#readme"
 }
