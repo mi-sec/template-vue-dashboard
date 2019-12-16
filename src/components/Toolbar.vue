@@ -1,13 +1,14 @@
 <template>
-	<v-toolbar
+	<v-app-bar
 		:dark="getDarkMode"
 		clipped-left
-		absolute
 		dense
+		tile
+		flat
 		app
 	>
 
-		<v-toolbar-side-icon
+		<v-app-bar-nav-icon
 			@click="setSidebarModel"
 		/>
 
@@ -19,10 +20,10 @@
 		<v-spacer></v-spacer>
 
 		<v-toolbar-items class="hidden-sm-and-down">
-			<v-btn to="/" flat>Home</v-btn>
+			<v-btn to="/" tile>Home</v-btn>
 		</v-toolbar-items>
 
-	</v-toolbar>
+	</v-app-bar>
 </template>
 
 <script>

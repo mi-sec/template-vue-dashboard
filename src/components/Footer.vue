@@ -1,7 +1,10 @@
 <template>
 	<v-footer
 		:dark="getDarkMode"
+		class="pt-0 pb-0"
+		height="26"
 		inset
+		tile
 		app
 	>
 		<span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
@@ -9,9 +12,12 @@
 		<v-spacer></v-spacer>
 
 		<v-btn
-			flat
+			height="26"
+			width="26"
+			tile
 			icon
-			@click="setDarkMode"
+			x-small
+			@click="setDarkMode()"
 		>
 			<v-icon>mdi-invert-colors</v-icon>
 		</v-btn>

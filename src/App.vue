@@ -1,9 +1,12 @@
 <template>
-	<v-app>
+	<v-app :dark="getDarkMode">
 		<Sidebar/>
 		<Toolbar/>
 
-		<v-content :class="getDarkMode ? 'dark-mode' : 'light-mode'">
+		<v-content :dark="getDarkMode">
+			<v-container fluid ma-0 pa-0>
+				<router-view></router-view>
+			</v-container>
 		</v-content>
 
 		<Footer/>
@@ -40,11 +43,7 @@
 </script>
 
 <style>
-	.dark-mode {
-		background: #303030;
-	}
-
-	.light-mode {
-		background: #fafafa;
+	html, body {
+		overflow: hidden;
 	}
 </style>

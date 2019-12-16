@@ -34,12 +34,4 @@ const router = new Router( {
 	}
 } );
 
-router.beforeResolve( ( to, from, next ) => {
-	next();
-} );
-
-router.beforeEach( ( to, from, next ) => {
-	next();
-} );
-
 export default router;
