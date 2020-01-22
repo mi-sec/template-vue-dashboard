@@ -1,8 +1,5 @@
 export default {
-	setDarkMode( state ) {
-		state.darkMode = !state.darkMode;
-	},
-	toggleSidebar( state ) {
-		state.sidebarModel = !state.sidebarModel;
+	commitConfig( state, config ) {
+		Object.assign( state, config );
 	}
 };

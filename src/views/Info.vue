@@ -35,10 +35,6 @@
 					env: process.env
 				}
 			};
-		},
-		mounted() {
-			console.log( process.env );
-			console.log( this );
 		}
 	};
 </script>

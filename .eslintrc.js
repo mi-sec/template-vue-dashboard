@@ -99,11 +99,11 @@ module.exports = {
 			1,
 			{
 				overrides: {
-					catch: { after: false },
-					if: { after: false },
-					for: { after: false },
-					while: { after: false },
-					switch: { after: false }
+					catch: { after: true },
+					if: { after: true },
+					for: { after: true },
+					while: { after: true },
+					switch: { after: true }
 				}
 			}
 		],
@@ -284,6 +284,7 @@ module.exports = {
 		{
 			files: [ '*.vue' ],
 			rules: {
+				indent: 'off',
 				'vue/script-indent': [
 					'warn',
 					'tab',

@@ -22,10 +22,10 @@ const router = new Router( {
 		.map( path => route( path ) )
 		.concat( [ { path: '*', redirect: '/' } ] ),
 	scrollBehavior( to, from, savedPosition ) {
-		if( savedPosition ) {
+		if ( savedPosition ) {
 			return savedPosition;
 		}
-		else if( to.hash ) {
+		else if ( to.hash ) {
 			return { selector: to.hash };
 		}
 		else {
