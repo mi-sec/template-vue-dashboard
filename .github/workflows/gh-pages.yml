@@ -24,6 +24,4 @@ jobs:
       - name: Deploy
         run: |
           ls -laF
-          ls -laF dist
-          git checkout -b gh-pages
-          git push origin gh-pages
+          echo printenv
