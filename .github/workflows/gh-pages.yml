@@ -10,21 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+
       - name: npm install and build
         run: |
           npm ci
           npm run build
 
-  publish-gh-pages:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
       - name: Deploy
         run: |
           ls -laF
+          ls -laF dist
           git branch -v
+          git subtree push --prefix ./dist origin gh-pages
