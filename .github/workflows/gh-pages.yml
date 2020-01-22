@@ -23,8 +23,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: Deploy
-        uses: actions/checkout@v1
         run: |
           ls -laF
           git branch -v
