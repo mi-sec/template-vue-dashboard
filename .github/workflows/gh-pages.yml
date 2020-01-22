@@ -20,9 +20,6 @@ jobs:
         run: |
           git config --local user.name "gh-action"
           git config --local user.email "gh-action@users.noreply.github.com"
-          git checkout --orphan gh-pages
-          git reset --hard
-          git checkout master
           git worktree add dist gh-pages
           ls -laF dist
 
@@ -36,7 +33,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           ls -laF dist
+          git branch -v
           cd dist
+          git branch -v
           ls -laF
           
           echo git add --force .
