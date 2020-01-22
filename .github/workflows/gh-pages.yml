@@ -1,0 +1,31 @@
+name: Generate GitHub Pages Example
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install and build
+        run: |
+          npm ci
+          npm run build
+
+  publish-gh-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: actions/checkout@v1
+        env:
+          REPO: git@github.com:mi-sec/template-vue-dashboard.git
+          BRANCH: gh-pages
+          FOLDER: build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
