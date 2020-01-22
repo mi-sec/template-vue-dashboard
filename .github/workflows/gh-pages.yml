@@ -11,11 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Use Node.js
+      - name: use node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       
+      - name: checkout gh-pages
+        run: |
+          git checkout -b gh-pages
+
       - name: npm install and build
         run: |
           npm ci
