@@ -25,8 +25,6 @@ jobs:
     steps:
       - name: Deploy
         uses: actions/checkout@v1
-        env:
-          REPO: git@github.com:mi-sec/template-vue-dashboard.git
-          BRANCH: gh-pages
-          FOLDER: build
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ls -laF
+          git branch -v
