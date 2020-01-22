@@ -1,20 +1,12 @@
-import axios from 'axios';
-
 export default {
-	async loadLocalConfig( context ) {
+	async getConfig( context ) {
+		this.$logger.info( 'action.getConfig' );
 		try {
-			const { data } = await axios.get( '/config.json' );
-			context.commit( 'commitLocalConfig', data );
-		} catch( e ) {
-			console.error( e );
-		}
-	},
-	async loadApiConfig( context ) {
-		try {
-			const data = await this.$api.getConfig();
+			const { data } = await this.$axios.get( '/config.json' );
 			context.commit( 'commitConfig', data );
-		} catch( e ) {
-			console.error( e );
+		}
+		catch ( e ) {
+			this.$logger.error( e );
 		}
 	}
 };

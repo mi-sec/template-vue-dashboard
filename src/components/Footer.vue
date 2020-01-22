@@ -15,6 +15,7 @@
 			tile
 			icon
 			x-small
+			aria-label="invert-colors"
 			@click.stop="$vuetify.theme.dark = !$vuetify.theme.dark"
 		>
 			<v-icon>mdi-invert-colors</v-icon>
@@ -31,7 +32,7 @@
 			return {};
 		},
 		computed: {
-			...mapState( [ 'dark', 'footer' ] )
+			...mapState( [ 'footer' ] )
 		}
 	};
 </script>

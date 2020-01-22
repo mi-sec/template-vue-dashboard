@@ -1,7 +1,4 @@
 export default {
-	dark: {
-		enabled: true
-	},
 	appbar: {
 		clipped: true,
 		dense: true
@@ -15,6 +12,6 @@ export default {
 	},
 	footer: {
 		inset: false,
-		height: '26'
+		height: 26
 	}
 };

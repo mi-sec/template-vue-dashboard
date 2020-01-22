@@ -14,8 +14,7 @@
 </template>
 
 <script>
-	import '@/assets/roboto.css';
-	import '@/assets/material-icons.css';
+	import { mapActions } from 'vuex';
 
 	import Sidebar from '@/components/Sidebar';
 	import Toolbar from '@/components/Toolbar';
@@ -33,6 +32,13 @@
 		},
 		beforeCreate() {
 			this.$installAxios();
+			this.$installLogger();
+		},
+		async mounted() {
+			await this.getConfig();
+		},
+		methods: {
+			...mapActions( [ 'getConfig' ] )
 		}
 	};
 </script>

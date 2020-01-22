@@ -1,2 +1,3 @@
-import './vuetify';
 import './axios';
+import './logger';
+import './vuetify';

@@ -4,9 +4,8 @@
 		:clipped-left="appbar.clipped"
 		:dense="appbar.dense"
 	>
-		<!--clipped-left dense tile flat app-->
-
 		<v-app-bar-nav-icon
+			aria-label="nav"
 			@click.stop="sidebar.model = !sidebar.model"
 		/>
 
@@ -18,8 +17,12 @@
 		<v-spacer></v-spacer>
 
 		<v-toolbar-items class="hidden-sm-and-down">
-			<v-btn to="/" tile>Home</v-btn>
-			<v-btn to="/info" tile>Info</v-btn>
+			<v-btn to="/" tile aria-label="home">
+				Home
+			</v-btn>
+			<v-btn to="/info" tile aria-label="info">
+				Info
+			</v-btn>
 		</v-toolbar-items>
 
 	</v-app-bar>
