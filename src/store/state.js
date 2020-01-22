@@ -1,4 +1,20 @@
 export default {
-	darkMode: true,
-	sidebarModel: true
+	dark: {
+		enabled: true
+	},
+	appbar: {
+		clipped: true,
+		dense: true
+	},
+	sidebar: {
+		model: null,
+		type: '',
+		clipped: true,
+		floating: false,
+		mini: false
+	},
+	footer: {
+		inset: false,
+		height: '26'
+	}
 };

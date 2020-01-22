@@ -1,11 +1,9 @@
 <template>
 	<v-footer
-		:dark="getDarkMode"
-		class="pt-0 pb-0"
-		height="26"
-		inset
-		tile
 		app
+		class="pt-0 pb-0"
+		:inset="footer.inset"
+		:height="footer.height"
 	>
 		<span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
 
@@ -17,7 +15,7 @@
 			tile
 			icon
 			x-small
-			@click="setDarkMode()"
+			@click.stop="$vuetify.theme.dark = !$vuetify.theme.dark"
 		>
 			<v-icon>mdi-invert-colors</v-icon>
 		</v-btn>
@@ -25,7 +23,7 @@
 </template>
 
 <script>
-	import { mapMutations, mapGetters } from 'vuex';
+	import { mapState } from 'vuex';
 
 	export default {
 		name: 'Footer',
@@ -33,10 +31,7 @@
 			return {};
 		},
 		computed: {
-			...mapGetters( [ 'getDarkMode' ] )
-		},
-		methods: {
-			...mapMutations( [ 'setDarkMode' ] )
+			...mapState( [ 'dark', 'footer' ] )
 		}
 	};
 </script>

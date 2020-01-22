@@ -2,7 +2,7 @@ export default {
 	setDarkMode( state ) {
 		state.darkMode = !state.darkMode;
 	},
-	setSidebarModel( state ) {
+	toggleSidebar( state ) {
 		state.sidebarModel = !state.sidebarModel;
 	}
 };

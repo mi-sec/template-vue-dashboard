@@ -1,16 +1,18 @@
 <template>
 	<v-navigation-drawer
-		v-model="sidebarModel"
-		:dark="getDarkMode"
-		clipped
-		absolute
-		overflow
 		app
-	></v-navigation-drawer>
+		v-model="sidebar.model"
+		:clipped="sidebar.clipped"
+		:floating="sidebar.floating"
+		:mini-variant="sidebar.mini"
+		:permanent="sidebar.type === 'permanent'"
+		:temporary="sidebar.type === 'temporary'"
+		overflow
+	/>
 </template>
 
 <script>
-	import { mapGetters } from 'vuex';
+	import { mapState } from 'vuex';
 
 	export default {
 		name: 'Sidebar',
@@ -19,13 +21,7 @@
 		},
 		methods: {},
 		computed: {
-			...mapGetters( [ 'getDarkMode', 'getSidebarModel' ] ),
-			sidebarModel: {
-				get() {
-					return this.getSidebarModel;
-				},
-				set() {}
-			}
+			...mapState( [ 'sidebar' ] )
 		}
 	};
 </script>

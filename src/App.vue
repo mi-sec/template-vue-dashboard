@@ -1,9 +1,9 @@
 <template>
-	<v-app :dark="getDarkMode">
+	<v-app>
 		<Sidebar/>
 		<Toolbar/>
 
-		<v-content :dark="getDarkMode">
+		<v-content>
 			<v-container fluid ma-0 pa-0>
 				<router-view></router-view>
 			</v-container>
@@ -14,8 +14,6 @@
 </template>
 
 <script>
-	import { mapGetters } from 'vuex';
-
 	import '@/assets/roboto.css';
 	import '@/assets/material-icons.css';
 
@@ -32,9 +30,6 @@
 		},
 		data() {
 			return {};
-		},
-		computed: {
-			...mapGetters( [ 'getDarkMode' ] )
 		},
 		beforeCreate() {
 			this.$installAxios();

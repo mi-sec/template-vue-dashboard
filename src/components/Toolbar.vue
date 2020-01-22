@@ -1,15 +1,13 @@
 <template>
 	<v-app-bar
-		:dark="getDarkMode"
-		clipped-left
-		dense
-		tile
-		flat
 		app
+		:clipped-left="appbar.clipped"
+		:dense="appbar.dense"
 	>
+		<!--clipped-left dense tile flat app-->
 
 		<v-app-bar-nav-icon
-			@click="setSidebarModel"
+			@click.stop="sidebar.model = !sidebar.model"
 		/>
 
 		<v-toolbar-title class="headline">
@@ -21,24 +19,22 @@
 
 		<v-toolbar-items class="hidden-sm-and-down">
 			<v-btn to="/" tile>Home</v-btn>
+			<v-btn to="/info" tile>Info</v-btn>
 		</v-toolbar-items>
 
 	</v-app-bar>
 </template>
 
 <script>
-	import { mapMutations, mapGetters } from 'vuex';
+	import { mapState } from 'vuex';
 
 	export default {
 		name: 'Toolbar',
 		data() {
 			return {};
 		},
-		methods: {
-			...mapMutations( [ 'setSidebarModel' ] )
-		},
 		computed: {
-			...mapGetters( [ 'getDarkMode' ] )
+			...mapState( [ 'appbar', 'sidebar' ] )
 		}
 	};
 </script>

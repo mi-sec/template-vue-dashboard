@@ -4,5 +4,11 @@ export default [
 		name: 'home',
 		view: 'Home',
 		meta: {}
+	},
+	{
+		path: '/info',
+		name: 'info',
+		view: 'Info',
+		meta: {}
 	}
 ];

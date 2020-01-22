@@ -23,7 +23,7 @@ module.exports = {
 		it: true,
 		JSON: true,
 		console: true,
-		'$': true,
+		$: true,
 		M: true,
 		document: true,
 		location: true,
@@ -42,7 +42,7 @@ module.exports = {
 
 	rules: {
 		indent: [
-			2,
+			'warn',
 			'tab',
 			{ SwitchCase: 1 }
 		],
@@ -284,7 +284,6 @@ module.exports = {
 		{
 			files: [ '*.vue' ],
 			rules: {
-				'indent': 'off',
 				'vue/script-indent': [
 					'warn',
 					'tab',
