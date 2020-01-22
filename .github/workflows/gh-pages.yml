@@ -24,7 +24,7 @@ jobs:
           git reset --hard
           git checkout master
           git worktree add dist gh-pages
-          ll dist
+          ls -laF dist
 
       - name: npm install and build
         run: |
@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          ll dist
+          ls -laF dist
           cd dist
           ls -laF
           
