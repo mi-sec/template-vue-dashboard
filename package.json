@@ -1,6 +1,6 @@
 {
 	"name": "template-vue-dashboard",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Basic vue dashboard",
 	"private": true,
 	"main": "main.js",
