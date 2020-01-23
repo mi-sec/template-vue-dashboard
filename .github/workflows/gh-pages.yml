@@ -20,7 +20,10 @@ jobs:
         run: |
           git config --local user.name "gh-action"
           git config --local user.email "gh-action@users.noreply.github.com"
+          ls -laF
+          rm -rf gh-pages
           git worktree add gh-pages gh-pages
+          ls -laF gh-pages
 
       - name: npm install and build
         run: |
