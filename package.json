@@ -12,6 +12,7 @@
 	"dependencies": {
 		"axios": "0.19.1",
 		"core-js": "3.6.4",
+		"moment": "2.24.0",
 		"pino": "5.16.0",
 		"vue": "2.6.11",
 		"vuex": "3.1.2",
