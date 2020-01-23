@@ -11,10 +11,6 @@ const config = {
 	]
 };
 
-process.env.GITHUB_ACTIONS    = 'true';
-process.env.GITHUB_REPOSITORY = 'mi-sec/template-vue-dashboard';
-
-console.log( process.env.GITHUB_ACTIONS );
 if ( process.env.GITHUB_ACTIONS === 'true' ) {
 	config.publicPath = `/${ process.env.GITHUB_REPOSITORY.split( '/' ).pop().trim() }/`;
 }

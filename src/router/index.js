@@ -17,6 +17,7 @@ Vue.use( Router );
 Vue.use( Meta );
 
 const router = new Router( {
+	base: process.env.BASE_URL || window.location.pathname,
 	mode: 'history',
 	routes: paths
 		.map( path => route( path ) )
