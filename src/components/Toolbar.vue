@@ -10,8 +10,8 @@
 		/>
 
 		<v-toolbar-title class="headline">
-			<span>template</span>
-			<span class="font-weight-light">vue-dashboard</span>
+			<span>{{ VUE_APP_TITLE }}</span>
+			<span class="font-weight-light">{{ VUE_APP_VERSION }}</span>
 		</v-toolbar-title>
 
 		<v-spacer></v-spacer>
@@ -34,7 +34,10 @@
 	export default {
 		name: 'Toolbar',
 		data() {
-			return {};
+			return {
+				VUE_APP_TITLE: process.env.VUE_APP_TITLE,
+				VUE_APP_VERSION: `v${ process.env.VUE_APP_VERSION }`
+			};
 		},
 		computed: {
 			...mapState( [ 'appbar', 'sidebar' ] )
