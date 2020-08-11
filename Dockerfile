@@ -10,4 +10,6 @@ RUN npm i
 
 COPY . .
 
-CMD npm run build
+RUN rm -rf build/*
+ENV NODE_ENV=production
+CMD [ "npm", "run", "build-docker" ]
