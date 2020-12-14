@@ -4,6 +4,9 @@ import Router from 'vue-router';
 
 import paths from './paths';
 
+Vue.use( Router );
+Vue.use( Meta );
+
 function route( { path, name, view, meta } ) {
 	return {
 		name: name || view,
@@ -12,9 +15,6 @@ function route( { path, name, view, meta } ) {
 		component: async () => await import( `@/views/${ view }.vue` )
 	};
 }
-
-Vue.use( Router );
-Vue.use( Meta );
 
 const router = new Router( {
 	base: process.env.BASE_URL || window.location.pathname,

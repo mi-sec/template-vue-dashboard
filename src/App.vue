@@ -3,11 +3,11 @@
 		<Sidebar/>
 		<Toolbar/>
 
-		<v-content>
+		<v-main>
 			<v-container fluid ma-0 pa-0>
 				<router-view></router-view>
 			</v-container>
-		</v-content>
+		</v-main>
 
 		<Footer/>
 	</v-app>
