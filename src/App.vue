@@ -2,13 +2,11 @@
 	<v-app>
 		<Sidebar/>
 		<Toolbar/>
-
 		<v-main>
 			<v-container fluid ma-0 pa-0>
 				<router-view></router-view>
 			</v-container>
 		</v-main>
-
 		<Footer/>
 	</v-app>
 </template>
@@ -28,7 +26,9 @@
 			Footer
 		},
 		data() {
-			return {};
+			return {
+				drawer: null
+			};
 		},
 		beforeCreate() {
 			this.$installAxios();

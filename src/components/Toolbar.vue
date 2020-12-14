@@ -6,7 +6,7 @@
 	>
 		<v-app-bar-nav-icon
 			aria-label="nav"
-			@click.stop="sidebar.model = !sidebar.model"
+			@click="sidebar.model = !sidebar.model"
 		/>
 
 		<v-toolbar-title class="headline">
