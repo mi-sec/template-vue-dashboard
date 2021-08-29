@@ -1,5 +1,5 @@
 export default {
-	commitConfig( state, config ) {
-		Object.assign( state, config );
-	}
+    commitConfig( state, config ) {
+        Object.assign( state, config );
+    }
 };

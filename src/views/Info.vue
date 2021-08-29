@@ -27,14 +27,14 @@
 </template>
 
 <script>
-	export default {
-		name: 'Info',
-		data() {
-			return {
-				data: {
-					env: process.env
-				}
-			};
-		}
-	};
+export default {
+    name: 'Info',
+    data() {
+        return {
+            data: {
+                env: process.env
+            }
+        };
+    }
+};
 </script>

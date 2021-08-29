@@ -14,7 +14,7 @@ Template Vue.js Application
 ### [getting started](#top)
 
 the following applications are required to run in `production`:
-- [Node.js](https://nodejs.org/en/download/) (recommended: `v12.18.3`)
+- [Node.js](https://nodejs.org/en/download/) (recommended: `v14.17.5`)
 
 ##### [cloning and setup](#top)
 

@@ -29,18 +29,18 @@
 </template>
 
 <script>
-	import { mapState } from 'vuex';
+import { mapState } from 'vuex';
 
-	export default {
-		name: 'Toolbar',
-		data() {
-			return {
-				VUE_APP_TITLE: process.env.VUE_APP_TITLE,
-				VUE_APP_VERSION: `v${ process.env.VUE_APP_VERSION }`
-			};
-		},
-		computed: {
-			...mapState( [ 'appbar', 'sidebar' ] )
-		}
-	};
+export default {
+    name: 'Toolbar',
+    data() {
+        return {
+            VUE_APP_TITLE: process.env.VUE_APP_TITLE,
+            VUE_APP_VERSION: `v${ process.env.VUE_APP_VERSION }`
+        };
+    },
+    computed: {
+		...mapState( [ 'appbar', 'sidebar' ] )
+    }
+};
 </script>

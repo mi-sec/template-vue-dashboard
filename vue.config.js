@@ -6,14 +6,14 @@ process.env.VUE_APP_VERSION     = pack.version;
 process.env.VUE_APP_REPOSITORY  = pack.homepage;
 
 const config = {
-	productionSourceMap: process.env.NODE_ENV !== 'production',
-	transpileDependencies: [
-		'vuetify'
-	]
+    productionSourceMap: process.env.NODE_ENV !== 'production',
+    transpileDependencies: [
+        'vuetify'
+    ]
 };
 
 if ( process.env.GITHUB_ACTIONS === 'true' ) {
-	config.publicPath = `/${ process.env.GITHUB_REPOSITORY.split( '/' ).pop().trim() }/`;
+    config.publicPath = `/${ process.env.GITHUB_REPOSITORY.split( '/' ).pop().trim() }/`;
 }
 
 module.exports = config;

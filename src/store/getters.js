@@ -1,8 +1,8 @@
 export default {
-	getDarkMode( state ) {
-		return state.darkMode;
-	},
-	getSidebarModel( state ) {
-		return state.sidebarModel;
-	}
+    getDarkMode( state ) {
+        return state.darkMode;
+    },
+    getSidebarModel( state ) {
+        return state.sidebarModel;
+    }
 };

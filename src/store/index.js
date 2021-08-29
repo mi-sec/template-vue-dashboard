@@ -13,9 +13,9 @@ Vue.use( Vuex );
 
 // Create a new store
 export default new Vuex.Store( {
-	actions,
-	getters,
-	// modules,
-	mutations,
-	state
+    actions,
+    getters,
+    // modules,
+    mutations,
+    state
 } );

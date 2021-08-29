@@ -12,16 +12,16 @@
 </template>
 
 <script>
-	import { mapState } from 'vuex';
+import { mapState } from 'vuex';
 
-	export default {
-		name: 'Sidebar',
-		data() {
-			return {};
-		},
-		methods: {},
-		computed: {
-			...mapState( [ 'sidebar' ] )
-		}
-	};
+export default {
+    name: 'Sidebar',
+    data() {
+        return {};
+    },
+    methods: {},
+    computed: {
+		...mapState( [ 'sidebar' ] )
+    }
+};
 </script>

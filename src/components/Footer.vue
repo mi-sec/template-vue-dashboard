@@ -39,29 +39,29 @@
 </template>
 
 <script>
-	import { mapState } from 'vuex';
-	import moment       from 'moment';
+import { mapState } from 'vuex';
+import moment       from 'moment';
 
-	export default {
-		name: 'Footer',
-		data() {
-			return {
-				version: `v${ process.env.VUE_APP_VERSION }`,
-				repoUrl: process.env.VUE_APP_REPOSITORY || '/',
-				now: moment().format( 'D MMM YYYY, HH:mm:ss' )
-			};
-		},
-		mounted() {
-			this.timeInterval = setInterval(
-				() => this.now = moment().format( 'D MMM YYYY, HH:mm:ss' ),
-				60
-			);
-		},
-		beforeDestroy() {
-			clearInterval( this.timeInterval );
-		},
-		computed: {
-			...mapState( [ 'footer' ] )
-		}
-	};
+export default {
+    name: 'Footer',
+    data() {
+        return {
+            version: `v${ process.env.VUE_APP_VERSION }`,
+            repoUrl: process.env.VUE_APP_REPOSITORY || '/',
+            now: moment().format( 'D MMM YYYY, HH:mm:ss' )
+        };
+    },
+    mounted() {
+        this.timeInterval = setInterval(
+            () => this.now = moment().format( 'D MMM YYYY, HH:mm:ss' ),
+            60
+        );
+    },
+    beforeDestroy() {
+        clearInterval( this.timeInterval );
+    },
+    computed: {
+		...mapState( [ 'footer' ] )
+    }
+};
 </script>
