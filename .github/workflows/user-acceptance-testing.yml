@@ -11,7 +11,7 @@ jobs:
 
   installDependencies:
 
-    name: Install Dependencies
+    name: User Acceptance Tests
 
     runs-on: ubuntu-latest
 
@@ -21,17 +21,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Install Dependencies
+      - name: install dependencies
         uses: actions/setup-node@v1
         env:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         with:
           node-version: ${{ matrix.node-version }}
-          args: install
+          args: npm install
+      - name: build application
+        with:
+          node-version: ${{ matrix.node-version }}
+        run: npm run build
       - name: npm run test:uat
         uses: mujo-code/puppeteer-headful@master
         env:
-          CI: true
+          CI: 'true'
         with:
           args: npm run test:ci
 
