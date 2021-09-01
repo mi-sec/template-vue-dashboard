@@ -8,12 +8,10 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "test:uat": "npx cucumber-js ./tests/uat/*.feature",
-        "test:e2e": "jest",
         "test:unit": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint",
         "build-docker": "vue-cli-service build && [ -d build ] || mkdir build && mv dist/* build/"
     },
-    "main": "main.js",
     "dependencies": {
         "@mdi/font": "^5.9.55",
         "axios": "^0.21.1",
@@ -39,6 +37,7 @@
         "jest": "^27.1.0",
         "jest-puppeteer": "^5.0.4",
         "mime-types": "^2.1.32",
+        "playwright": "^1.14.1",
         "puppeteer": "^10.2.0",
         "sass": "^1.38.2",
         "sass-loader": "^10",

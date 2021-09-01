@@ -3,7 +3,7 @@ const http                          = require( 'http' );
 const path                          = require( 'path' );
 const mime                          = require( 'mime-types' );
 const { promises: fs }              = require( 'fs' );
-const puppeteer                     = require( 'puppeteer' );
+const { chromium }                  = require( 'playwright' );
 const { expect }                    = require( 'chai' );
 
 const appPath = path.join( process.cwd(), 'dist' );
@@ -38,11 +38,10 @@ BeforeAll( async () => {
         }
     } ).listen( PORT );
 
-    browser = await puppeteer.launch( {
-        // executablePath: process.env.PUPPETEER_EXEC_PATH,
-        headless: true,
-        args: [ `--no-sandbox` ],
-        slowMo: 50
+    browser = await chromium.launch( {
+        // headless: true,
+        // args: [ `--no-sandbox` ],
+        // slowMo: 50
     } );
 } );
 
@@ -54,7 +53,8 @@ AfterAll( async () => {
 When( 'the web app renders', async function() {
     const startHrtime = process.hrtime();
 
-    this.page = await browser.newPage();
+    this.context = await browser.newContext();
+    this.page    = await this.context.newPage();
     await this.page.goto( `http://localhost:${ PORT }` );
     await this.page.screenshot( { path: 'screenshot.png' } );
 
