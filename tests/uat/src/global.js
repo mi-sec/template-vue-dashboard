@@ -12,10 +12,6 @@ let server;
 let browser;
 
 BeforeAll( async () => {
-    console.log( appPath );
-    const dir = await fs.readdir( appPath );
-    console.log( dir );
-
     server = http.createServer( async ( request, response ) => {
         let filePath = `.${ request.url }`;
         if ( filePath === './' ) {
@@ -23,9 +19,6 @@ BeforeAll( async () => {
         }
 
         filePath = path.join( appPath, filePath );
-
-        console.log( appPath );
-        console.log( filePath );
 
         try {
             const contentType = mime.lookup( filePath );
@@ -63,6 +56,7 @@ When( 'the web app renders', async function() {
 
     this.page = await browser.newPage();
     await this.page.goto( `http://localhost:${ PORT }` );
+    await this.page.screenshot( { path: 'screenshot.png' } );
 
     expect( process.hrtime( startHrtime )[ 1 ] ).to.be.lessThan( 1e9 );
 

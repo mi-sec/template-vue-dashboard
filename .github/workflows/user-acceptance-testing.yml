@@ -40,6 +40,12 @@ jobs:
           CI: 'true'
         with:
           args: npm run test:uat
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshot
+          path: screenshot.png
+          retention-days: 5
 
 #  build:
 #
