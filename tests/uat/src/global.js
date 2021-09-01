@@ -12,6 +12,10 @@ let server;
 let browser;
 
 BeforeAll( async () => {
+    console.log( appPath );
+    const dir = await fs.readdir( appPath );
+    console.log( dir );
+
     server = http.createServer( async ( request, response ) => {
         let filePath = `.${ request.url }`;
         if ( filePath === './' ) {
@@ -19,6 +23,9 @@ BeforeAll( async () => {
         }
 
         filePath = path.join( appPath, filePath );
+
+        console.log( appPath );
+        console.log( filePath );
 
         try {
             const contentType = mime.lookup( filePath );
