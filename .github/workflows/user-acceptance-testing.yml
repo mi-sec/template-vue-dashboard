@@ -33,7 +33,7 @@ jobs:
         env:
           CI: true
         with:
-          args: ./node_modules/.bin/cucumber-js ./tests/uat/*.feature
+          args: npm run test:ci
 
 #  build:
 #

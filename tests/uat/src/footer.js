@@ -33,7 +33,7 @@ Then( 'the dark mode selection button should be visible', async function() {
     return true;
 } );
 
-Then( 'should change the dark mode of the application when clicked', async function() {
+Then( 'should change the application from dark mode to light mode when clicked', async function() {
     const elementApp = await this.page.$( '.v-application' );
 
     // class list before the dark mode button is clicked
@@ -55,6 +55,32 @@ Then( 'should change the dark mode of the application when clicked', async funct
     expect( classValsAfterClick )
         .to.include( 'theme--light' )
         .and.not.include( 'theme--dark' );
+
+    return true;
+} );
+
+Then( 'should change the application from light mode to dark mode when clicked', async function() {
+    const elementApp = await this.page.$( '.v-application' );
+
+    // class list before the dark mode button is clicked
+    const appClassListBeforeDarkModeClicked = await this.page.evaluate( ( ele ) => ele.classList, elementApp );
+    const classValsBeforeClick              = Object.values( appClassListBeforeDarkModeClicked );
+
+    expect( classValsBeforeClick )
+        .to.include( 'theme--light' )
+        .and.not.include( 'theme--dark' );
+
+    // make the click
+    const elementButton = await this.page.$( 'footer > button' );
+    await this.page.evaluate( ( ele ) => ele.click(), elementButton );
+
+    // class list after the dark mode button is clicked
+    const appClassListAfterDarkModeClicked = await this.page.evaluate( ( ele ) => ele.classList, elementApp );
+    const classValsAfterClick              = Object.values( appClassListAfterDarkModeClicked );
+
+    expect( classValsAfterClick )
+        .to.include( 'theme--dark' )
+        .and.not.include( 'theme--light' );
 
     return true;
 } );
