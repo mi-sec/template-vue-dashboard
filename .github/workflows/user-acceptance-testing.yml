@@ -27,7 +27,7 @@ jobs:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         with:
           node-version: ${{ matrix.node-version }}
-          args: install
+          args: npm install
       - run: ls -laGF
       - run: npm --version
       - run: node --version
