@@ -39,7 +39,7 @@ BeforeAll( async () => {
     } ).listen( PORT );
 
     browser = await puppeteer.launch( {
-        headless: true,
+        headless: false,
         args: [
             `--no-sandbox`,
             `--disable-setuid-sandbox`
@@ -55,7 +55,8 @@ AfterAll( async () => {
 
 When( 'the web app renders', async function() {
     const startHrtime = process.hrtime();
-    this.page         = await browser.newPage();
+
+    this.page = await browser.newPage();
     await this.page.goto( `http://localhost:${ PORT }` );
 
     expect( process.hrtime( startHrtime )[ 1 ] ).to.be.lessThan( 1e9 );
