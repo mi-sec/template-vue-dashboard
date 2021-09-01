@@ -8,9 +8,17 @@ on:
       - '!gh-pages'
 
 jobs:
+
   installDependencies:
+
     name: Install Dependencies
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
     steps:
       - uses: actions/checkout@v1
       - name: Install Dependencies
@@ -18,31 +26,32 @@ jobs:
         env:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         with:
+          node-version: ${{ matrix.node-version }}
           args: install
-      - name: Test Code
+      - name: npm run test:uat
         uses: mujo-code/puppeteer-headful@master
         env:
-          CI: 'true'
+          CI: true
         with:
-          args: npm test
+          args: npm run test:uat
 
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm run test:uat
-      run: |
-        npm ci
-        npm run test:uat
-      env:
-        CI: true
+#  build:
+#
+#    runs-on: ubuntu-latest
+#
+#    strategy:
+#      matrix:
+#        node-version: [14.x]
+#
+#    steps:
+#    - uses: actions/checkout@v1
+#    - name: Use Node.js ${{ matrix.node-version }}
+#      uses: actions/setup-node@v1
+#      with:
+#        node-version: ${{ matrix.node-version }}
+#    - name: npm run test:uat
+#      run: |
+#        npm ci
+#        npm run test:uat
+#      env:
+#        CI: true
