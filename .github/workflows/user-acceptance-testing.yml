@@ -20,14 +20,15 @@ jobs:
         node-version: [ 14.x ]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: install dependencies
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         env:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         with:
           node-version: ${{ matrix.node-version }}
-          args: npm install
+      - run: ls -laGF
+      - run: npm install
       - run: ls -laGF
       - run: npm --version
       - run: node --version
