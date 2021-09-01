@@ -27,12 +27,10 @@ jobs:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         with:
           node-version: ${{ matrix.node-version }}
-          args: npm install
-      - name: build application
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-          args: npm run build
+      - run: npm install
+      - run: npm run build
+      - run: npm --version
+      - run: ls -laGF
       - name: npm run test:uat
         uses: mujo-code/puppeteer-headful@master
         env:
