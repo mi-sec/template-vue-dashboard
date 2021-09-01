@@ -27,16 +27,18 @@ jobs:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run build
-      - run: npm --version
+          args: install
       - run: ls -laGF
+      - run: npm --version
+      - run: node --version
+      - run: npm run build
+      - run: ls -laGF dist
       - name: npm run test:uat
         uses: mujo-code/puppeteer-headful@master
         env:
           CI: 'true'
         with:
-          args: npm run test:ci
+          args: npm run test:uat
 
 #  build:
 #

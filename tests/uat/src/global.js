@@ -40,7 +40,7 @@ BeforeAll( async () => {
 
     browser = await puppeteer.launch( {
         executablePath: process.env.PUPPETEER_EXEC_PATH,
-        headless: false,
+        headless: true,
         args: [ `--no-sandbox` ],
         slowMo: 50
     } );
