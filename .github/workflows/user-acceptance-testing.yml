@@ -21,25 +21,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: install dependencies
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
-        env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         with:
           node-version: ${{ matrix.node-version }}
+      - name: npm install and build
+        run: |
+          npm ci
+          npm run build
+        env:
+          CI: true
       - run: ls -laGF
-      - run: npm install
-      - run: ls -laGF
-      - run: npm --version
-      - run: node --version
-      - run: npm run build
       - run: ls -laGF dist
       - name: npm run test:uat
-        uses: mujo-code/puppeteer-headful@master
+        run: |
+          npm run test:uat
         env:
-          CI: 'true'
-        with:
-          args: npm run test:uat
+          CI: true
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:

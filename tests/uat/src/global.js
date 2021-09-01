@@ -39,7 +39,7 @@ BeforeAll( async () => {
     } ).listen( PORT );
 
     browser = await puppeteer.launch( {
-        executablePath: process.env.PUPPETEER_EXEC_PATH,
+        // executablePath: process.env.PUPPETEER_EXEC_PATH,
         headless: true,
         args: [ `--no-sandbox` ],
         slowMo: 50
