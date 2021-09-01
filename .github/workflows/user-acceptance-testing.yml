@@ -30,13 +30,10 @@ jobs:
           args: install
       - name: npm run test:uat
         uses: mujo-code/puppeteer-headful@master
-        run: |
-          npm ci
-          npm run test:uat
         env:
           CI: true
-#        with:
-#          args: npm run test:uat
+        with:
+          args: npm ci && npm run test:uat
 
 #  build:
 #
