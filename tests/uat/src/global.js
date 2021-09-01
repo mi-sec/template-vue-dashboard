@@ -40,11 +40,8 @@ BeforeAll( async () => {
 
     browser = await puppeteer.launch( {
         executablePath: process.env.PUPPETEER_EXEC_PATH,
-        headless: true,
-        args: [
-            `--no-sandbox`,
-            `--disable-setuid-sandbox`
-        ],
+        headless: false,
+        args: [ `--no-sandbox` ],
         slowMo: 50
     } );
 } );

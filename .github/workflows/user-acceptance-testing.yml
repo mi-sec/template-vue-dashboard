@@ -33,9 +33,7 @@ jobs:
         env:
           CI: true
         with:
-          args: |
-            npm ci
-            npm run test:uat
+          args: ./node_modules/.bin/cucumber-js ./tests/uat/*.feature
 
 #  build:
 #
