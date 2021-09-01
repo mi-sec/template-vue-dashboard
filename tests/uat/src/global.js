@@ -38,7 +38,14 @@ BeforeAll( async () => {
         }
     } ).listen( PORT );
 
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch( {
+        headless: true,
+        args: [
+            `--no-sandbox`,
+            `--disable-setuid-sandbox`
+        ],
+        slowMo: 50
+    } );
 } );
 
 AfterAll( async () => {
