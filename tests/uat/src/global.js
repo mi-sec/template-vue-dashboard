@@ -56,7 +56,7 @@ When( 'the web app renders', async function() {
 
     this.page = await browser.newPage();
     await this.page.goto( `http://localhost:${ PORT }` );
-    await this.page.waitForNavigation( { waitUntil: 'networkidle0' } );
+    await this.page.waitForNavigation();
     await this.page.screenshot( { path: 'screenshot.png' } );
 
     expect( process.hrtime( startHrtime )[ 1 ] ).to.be.lessThan( 1e9 );
