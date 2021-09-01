@@ -6,7 +6,7 @@
     "author": "MI-SEC",
     "scripts": {
         "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
+        "build": "vue-cli-service build --mode production",
         "test:uat": "npx cucumber-js ./tests/uat/*.feature",
         "test:unit": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint",
