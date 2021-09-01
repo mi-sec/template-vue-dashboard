@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm run test:uat
         run: |
-          npm ci
+          npm install
           npm run test:uat
         env:
           CI: true
