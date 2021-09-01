@@ -78,7 +78,7 @@ Then( 'the time should be visible', async function() {
     const lastElement = element[ element.length - 1 ];
     const eleText     = await this.page.evaluate( ( ele ) => ele.textContent.trim(), lastElement );
 
-    expect( Math.abs( new Date( eleText ) - Date.now() ) ).to.be.lessThan( 1000 );
+    expect( Math.abs( new Date( eleText ) - Date.now() ) ).to.be.lessThan( 5000 );
 
     return true;
 } );
