@@ -33,7 +33,9 @@ jobs:
         env:
           CI: true
         with:
-          args: npm ci && npm run test:uat
+          args: |
+            npm ci
+            npm run test:uat
 
 #  build:
 #
