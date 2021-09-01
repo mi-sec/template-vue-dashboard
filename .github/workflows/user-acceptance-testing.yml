@@ -8,7 +8,7 @@ on:
       - '!gh-pages'
 
 jobs:
-  build:
+  user-acceptance-tests:
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,15 +16,17 @@ jobs:
         node-version: [ 14.x ]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - uses: microsoft/playwright-github-action@v1
       - name: npm install, build, and test
         run: |
           npm ci
           npm run build
+          npx playwright install-deps
           npm run test:uat
         env:
           CI: true
