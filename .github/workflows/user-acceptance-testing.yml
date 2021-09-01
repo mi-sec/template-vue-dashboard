@@ -8,11 +8,7 @@ on:
       - '!gh-pages'
 
 jobs:
-
-  installDependencies:
-
-    name: User Acceptance Tests
-
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,48 +16,15 @@ jobs:
         node-version: [ 14.x ]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install and build
+      - name: npm install, build, and test
         run: |
           npm ci
           npm run build
+          npm run test:e2e
         env:
           CI: true
-      - run: ls -laGF
-      - run: ls -laGF dist
-      - name: npm run test:uat
-        run: |
-          npm run test:uat
-        env:
-          CI: true
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v2
-        with:
-          name: screenshot
-          path: screenshot.png
-          retention-days: 5
-
-#  build:
-#
-#    runs-on: ubuntu-latest
-#
-#    strategy:
-#      matrix:
-#        node-version: [14.x]
-#
-#    steps:
-#    - uses: actions/checkout@v1
-#    - name: Use Node.js ${{ matrix.node-version }}
-#      uses: actions/setup-node@v1
-#      with:
-#        node-version: ${{ matrix.node-version }}
-#    - name: npm run test:uat
-#      run: |
-#        npm ci
-#        npm run test:uat
-#      env:
-#        CI: true
