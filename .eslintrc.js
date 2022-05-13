@@ -316,11 +316,21 @@ module.exports = {
         {
             files: [
                 '**/__tests__/*.{j,t}s?(x)',
-                '**/tests/unit/**/*.spec.{j,t}s?(x)'
+                '**/tests/**/*.spec.{j,t}s?(x)'
             ],
             env: {
                 mocha: true
-            }
+            },
+            overrides: [
+                {
+                    files: [
+                        'tests/**/*.spec.js'
+                    ],
+                    rules: {
+                        'vue/multi-word-component-names': 0
+                    }
+                }
+            ]
         }
     ],
 
