@@ -1,6 +1,5 @@
 module.exports = {
     env: {
-        es6: true,
         node: true
     },
 
@@ -10,7 +9,7 @@ module.exports = {
     ],
 
     parserOptions: {
-        parser: 'babel-eslint',
+        parser: '@babel/eslint-parser',
         ecmaVersion: 12,
         sourceType: 'module'
     },
@@ -301,7 +300,18 @@ module.exports = {
                         baseIndent: 0
                     }
                 ]
-            }
+            },
+            overrides: [
+                {
+                    files: [
+                        'src/components/**/*.vue',
+                        'src/views/**/*.vue'
+                    ],
+                    rules: {
+                        'vue/multi-word-component-names': 0
+                    }
+                }
+            ]
         },
         {
             files: [

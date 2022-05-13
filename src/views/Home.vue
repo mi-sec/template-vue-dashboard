@@ -1,9 +1,9 @@
 <template>
-	<v-container>
-		<v-flex xs12>
-			Home
-		</v-flex>
-	</v-container>
+    <v-container>
+        <v-flex xs12>
+            Home
+        </v-flex>
+    </v-container>
 </template>
 
 <script>

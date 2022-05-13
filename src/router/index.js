@@ -1,18 +1,14 @@
 import Vue    from 'vue';
-// import Meta   from 'vue-meta';
 import Router from 'vue-router';
 
 import paths from './paths';
 
 Vue.use( Router );
-// Vue.use( Meta );
 
-// function route( { path, name, view, meta } ) {
 function route( { path, name, view } ) {
     return {
         name: name || view,
         path,
-        // meta,
         component: () => import( `@/views/${ view }.vue` )
     };
 }

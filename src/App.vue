@@ -25,12 +25,6 @@ export default {
         Toolbar,
         Footer
     },
-    metaInfo() {
-        return {
-            title: process.env.VUE_APP_TITLE,
-            description: process.env.VUE_APP_DESCRIPTION
-        };
-    },
     data() {
         return {
             drawer: null
